@@ -10,6 +10,7 @@
     "dev": "nodemon"
   },
   "dependencies": {
+    "@prisma/client": "^6.15.0",
     "nodemon": "^3.1.10",
     "prisma": "^6.15.0"
   }
