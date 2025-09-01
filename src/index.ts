@@ -1,20 +1,19 @@
 import { PrismaClient } from "./generated/prisma/client";
 
-const client = new PrismaClient();
+const client = new PrismaClient({
+  log: ["query"],
+});
 
-const createUser = async () => {
+const FindUser = async () => {
   const user = await client.users.findFirst({
-    // data: {
-    //   username: "yasir",
-    //   age: 22,
-    //   City: "Ranchi",
-    //   password: "password",
-    // },
     where: {
       id: 7,
+    },
+    include: {
+      todos: true,
     },
   });
   console.log(user);
 };
 
-createUser();
+FindUser();
